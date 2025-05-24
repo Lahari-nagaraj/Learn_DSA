@@ -2,6 +2,7 @@
 
 Arraylist:
 Insert - O(n) ,  Search - O(1)
+
 LinkedList:
 Insert : O(1) , Search : O(n)
 
