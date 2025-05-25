@@ -48,4 +48,33 @@ list.isEmpty();                        // Checks if list is empty
 ## Reversing a linkedlist
 
 #### 1. Iterative 
+``` code
+public void reverseIterate(){
+if(head == null || head.next == null){
+return;
+}
+Node prevNode = head;
+Node currNode = head.next;
+while(currNode != null){
+Node nexxtNode = currNode.next;
+currNode.next = prevNode;
+//update
+prevNode = currNode;
+currNode = nextNode;
+}
+head.next = null;
+hed = prevNode;
+}
+```
 #### 2. Recursive
+``` code
+public Node reverseRecursive(Node head){
+if(head == null || head.next ==null){
+return head;
+}
+Node newhead = reverseRecursive(head.next);
+head.next.next = head;   //points back 
+head.next = null;
+return newhead
+}
+```
