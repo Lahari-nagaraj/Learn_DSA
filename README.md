@@ -114,4 +114,22 @@ return turtle;
 }
 ```
 3. Detect a cycle in a linkedlist:
+   #### Floyd's algorithm for detectig loops
+   if loop exist hare and turtle will meet at one point else hare goes to null.
+   ```code
+   public boolean hasCycle(ListNode head){
+   if(head == null){
+   return false;
+   }
+   ListNode hare = head;
+   ListNode turtle = head;
+   while(hare != null && hare.next != null){
+   hare = hare.next.next;
+   turtle = turtlr.next;
+   if(hare == turtle){
+   return true;
+   }}
+   return false
+   }
+   ```
    
