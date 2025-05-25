@@ -78,3 +78,40 @@ head.next = null;
 return newhead
 }
 ```
+
+1. Delete nth node from last : find size, (size-n+1 from first)
+2. Palindrome Linkedlist: find the middle of ll, reverse second half, compare the elements
+``` palindrome
+public boolean isPalindrome(ListNode head){
+if(head == null|| head.next == null){
+return true;
+}
+ListNode middle = findMiddle(head);
+ListNode secondhalfstart = reverse(middle.next);
+//compare
+ListNode firsthalfhead = head;
+while(secondhalfstart != null){
+if(firsthalfstart.val != secondhalfstart.val){
+return false;
+}
+firsthalfstart = firsthalfstart.next;
+secondhalfstart = secondhalstart.next;
+}
+return true;
+}
+```
+### Hare and turtle
+to find the middle element of linkedlist, when turtle moves one step hare moves 2 steps. until hare's next jum != null turtlr value keeeps on increasing else, turtles location is the middle value in a linkedlist
+```code
+public ListNode findMiddle(ListNode head){
+ListNode hare = head;
+ListNode turtle = head;
+while(hare.next != null && hare.next.next != null){
+hare = hare.next.next;
+turtle = turtle.next;
+}
+return turtle;
+}
+```
+3. Detect a cycle in a linkedlist:
+   
